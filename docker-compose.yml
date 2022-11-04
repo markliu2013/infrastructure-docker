@@ -1,0 +1,43 @@
+version: '3.0'
+
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "9098:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=m12d1h
+
+  phpmyadmin:
+    links:
+      - db:db
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "9097:80"
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: m12d1h
+
+  redis:
+    image: redis:alpine3.11
+    ports:
+      - "9096:6379"
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    volumes:
+      - ./jenkins/jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    ports:
+      - "9093:8080"
+
+volumes:
+  mysql_data:

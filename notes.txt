@@ -1,0 +1,10 @@
+MySQL允许远程连接
+
+CREATE USER 'bookkeeping'@'%' IDENTIFIED BY '111111';
+GRANT ALL PRIVILEGES ON *.* TO 'bookkeeping'@'%';
+flush privileges;
+
+phpmyadmin 密码总是错误
+之前的密码有缓存，执行  docker-compose down --volumes
+
+jenkins docker in docker
