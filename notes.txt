@@ -8,3 +8,18 @@ phpmyadmin 密码总是错误
 之前的密码有缓存，执行  docker-compose down --volumes
 
 jenkins docker in docker
+https://hackmamba.io/blog/2022/04/running-docker-in-a-jenkins-container/
+https://blog.container-solutions.com/running-docker-in-jenkins-in-docker
+https://stackoverflow.com/questions/62759798/install-jenkins-its-plugins-in-docker-then-save-a-new-image-to-be-used-in-the
+
+mount volume的目录要更改权限 chmod 777 -R jenkins_home
+Jenkins 2.319.1
+安装插件：
+1. Docker Pipeline - Build and use Docker containers from pipelines.
+2. Docker - This plugin integrates Jenkins with Docker
+### 2. Pipeline - This plugin and its dependencies form a suite of plugins that lets you orchestrate automation...
+### 3. Credentials Plugin - This plugin allows you to store credentials in Jenkins.
+### 4. Pipeline: Job - Defines a new job type for pipelines and provides their generic user interface.
+### Git - This plugin integrates Git with Jenkins.
+3. Git Parameter - Adds ability to choose branches, tags or revisions from git repositories configured in project.
+4. Publish Over SSH
