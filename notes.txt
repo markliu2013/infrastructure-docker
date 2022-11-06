@@ -23,3 +23,6 @@ Jenkins 2.319.1
 ### Git - This plugin integrates Git with Jenkins.
 3. Git Parameter - Adds ability to choose branches, tags or revisions from git repositories configured in project.
 4. Publish Over SSH
+
+jenkins npm 内存不足 报137错误
+https://blog.csdn.net/zstack_org/article/details/53258588
