@@ -29,29 +29,29 @@ services:
     image: redis:alpine3.11
     ports:
       - "9096:6379"
-
-  pg:
-    image: postgres
-    environment:
-      POSTGRES_PASSWORD: 123456
-      PGDATA: /var/lib/postgresql/data
-    volumes:
-      - pg_data:/var/lib/postgresql/data
-    ports:
-      - "9010:5432"
-  
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    environment:
-      PGADMIN_DEFAULT_EMAIL: markliu2013@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: 123456
-      PGADMIN_LISTEN_PORT: 80
-    ports:
-      - "9011:80"
-    volumes:
-      - pgadmin_data:/var/lib/pgadmin
-    links:
-      - "pg:pgsql-server"
+#
+#  pg:
+#    image: postgres
+#    environment:
+#      POSTGRES_PASSWORD: 123456
+#      PGDATA: /var/lib/postgresql/data
+#    volumes:
+#      - pg_data:/var/lib/postgresql/data
+#    ports:
+#      - "9010:5432"
+#
+#  pgadmin:
+#    image: dpage/pgadmin4:latest
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: markliu2013@gmail.com
+#      PGADMIN_DEFAULT_PASSWORD: 123456
+#      PGADMIN_LISTEN_PORT: 80
+#    ports:
+#      - "9011:80"
+#    volumes:
+#      - pgadmin_data:/var/lib/pgadmin
+#    links:
+#      - "pg:pgsql-server"
 
   # jenkins:
   #   image: jenkins/jenkins:lts
